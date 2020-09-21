@@ -18,33 +18,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="cqk-JA-iRf">
-                                <rect key="frame" x="138" y="225" width="138" height="139"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soz-Nh-7YZ">
-                                <rect key="frame" x="129" y="372" width="156" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created by Konstantin Novichenko for CodePath iOS course" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huE-ot-b16">
-                                <rect key="frame" x="109" y="631" width="197" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qo-bI-bVp">
-                                <rect key="frame" x="187" y="679" width="30" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLs-SB-zot">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="launch_image" translatesAutoresizingMaskIntoConstraints="NO" id="cqk-JA-iRf">
+                                        <rect key="frame" x="138" y="298.66666666666669" width="138" height="139"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soz-Nh-7YZ">
+                                        <rect key="frame" x="20" y="444.66666666666669" width="374" height="62"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Qo-bI-bVp">
+                                        <rect key="frame" x="192" y="705" width="30" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Konstantin Novichenko for CodePath iOS course" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huE-ot-b16">
+                                        <rect key="frame" x="107.66666666666667" y="668.33333333333337" width="198.66666666666663" height="28.666666666666629"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="203" id="MIf-Ix-0b2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="cqk-JA-iRf" firstAttribute="centerX" secondItem="PLs-SB-zot" secondAttribute="centerX" id="4GJ-Gm-r1w"/>
+                                    <constraint firstItem="1Qo-bI-bVp" firstAttribute="top" secondItem="huE-ot-b16" secondAttribute="bottom" constant="8" id="D2P-8S-5vK"/>
+                                    <constraint firstItem="1Qo-bI-bVp" firstAttribute="centerX" secondItem="PLs-SB-zot" secondAttribute="centerX" id="UDm-dx-VUm"/>
+                                    <constraint firstItem="Soz-Nh-7YZ" firstAttribute="leading" secondItem="PLs-SB-zot" secondAttribute="leading" constant="20" id="VK4-gP-564"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Qo-bI-bVp" secondAttribute="bottom" constant="17" id="dE5-nm-d57"/>
+                                    <constraint firstItem="huE-ot-b16" firstAttribute="centerX" secondItem="1Qo-bI-bVp" secondAttribute="centerX" id="hZz-Og-apO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Soz-Nh-7YZ" secondAttribute="trailing" constant="20" id="lQe-VH-5db"/>
+                                    <constraint firstItem="cqk-JA-iRf" firstAttribute="centerY" secondItem="PLs-SB-zot" secondAttribute="centerY" id="mRu-xp-KeS"/>
+                                    <constraint firstItem="Soz-Nh-7YZ" firstAttribute="top" secondItem="cqk-JA-iRf" secondAttribute="bottom" constant="7.3300000000000001" id="s7s-17-lxY"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PLs-SB-zot" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="AEJ-lX-gHz"/>
+                            <constraint firstItem="PLs-SB-zot" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="QrF-pO-OhS"/>
+                            <constraint firstItem="PLs-SB-zot" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="pfU-E1-uth"/>
+                            <constraint firstAttribute="trailing" secondItem="PLs-SB-zot" secondAttribute="trailing" id="tCN-yN-P2e"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
