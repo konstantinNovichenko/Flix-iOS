@@ -8,8 +8,9 @@
 
 import UIKit
 import AlamofireImage
+import WebKit
 
-class MovieDetailsViewController: UIViewController {
+class MovieDetailsViewController: UIViewController, WKUIDelegate {
 
     @IBOutlet weak var backdropView: UIImageView!
     @IBOutlet weak var posterView: UIImageView!
@@ -17,6 +18,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var synopsisLabel: UILabel!
     
     var movie: [String:Any]!
+    var webView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,18 +39,28 @@ class MovieDetailsViewController: UIViewController {
         posterView.af_setImage(withURL: posterUrl!)
         backdropView.af_setImage(withURL: backdropUrl!)
         
-        
     }
     
-
-    /*
+    @IBAction func tapOnPoster(_ sender: UITapGestureRecognizer) {
+        //Open trailer view
+        self.performSegue(withIdentifier: "showTrailer", sender: self);
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        //Set the movie id
+        let movieId = movie["id"] as! Int64
+        
+        // Pass the movie id to the new view controller.
+        let trailerViewController = segue.destination as! MovieTrailerViewController
+        trailerViewController.movieId = movieId
     }
-    */
+    
 
 }

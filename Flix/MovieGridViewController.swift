@@ -10,9 +10,7 @@ import UIKit
 import AlamofireImage
 
 class MovieGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    
-    
+    var screenSize: CGRect!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,7 +18,7 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        screenSize = UIScreen.main.bounds
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -29,7 +27,7 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         
-        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        let width = (screenSize.width - layout.minimumInteritemSpacing * 2) / 3
         layout.itemSize = CGSize(width: width, height: width * 3 / 2)
 
         let url = URL(string: "https://api.themoviedb.org/3/movie/297762/similar?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed")!
@@ -73,14 +71,25 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
+        
+        
+        //Find the selected movie
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)!
+        let movie = movies[indexPath.item]
+        
         // Pass the selected object to the new view controller.
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
-    */
+    
 
 }
